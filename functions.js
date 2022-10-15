@@ -16,8 +16,8 @@ function showProduct(product){
     const template = document.querySelector("template").content;
     const clone = template.cloneNode(true);
     //Change stuff
-    clone.querySelector("h3").textContent = product.brand;
-    clone.querySelector("h2").textContent = product.title.rendered;
+    clone.querySelector("h3").textContent = product.brand_name;
+    clone.querySelector("h2").textContent = product.model_name.rendered;
     clone.querySelector("img").src = 
     product._embedded[
         "wp:featuredmedia"
