@@ -1,9 +1,19 @@
-const url = "ozolinala.com/fridayData/wp-json/wp/v2/bike?_embed";
+// const url = "ozolinala.com/fridayData/wp-json/wp/v2/bike?_embed"
 
-fetch(url)
-.then((res) => res.json())
-.then((data) => handleProductList (data));
+// fetch(url)
+// .then((res) => res.json())
+// .then((data) => handleProductList (data));
+const endpoint = "ozolinala.com/fridayData/wp-json/wp/v2/bike?_embed"
+async function getData() {
+  let result = await fetch(endpoint);
+  showPosts(await result.json());
+}
+ 
+function showPosts(posts) {
+  console.log(posts);
+}
 
+getData();
 // Just checking
 
 function handleProductList(data) {
